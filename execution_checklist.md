@@ -62,3 +62,11 @@
 正式提交：英文Notebook；核查留存：本清单、Phase 1 PNG、Phase 2 HTML。另附中文讲解与原始data.zip副本，方便理解及重新运行。
 
 **最终状态：第01—17项已完成；第18项待你在Moodle上传并确认。没有代为提交，也没有将“本地完成”记录成“已上传”。**
+
+## GitHub 上传记录
+
+- [x] G01｜创建仓库：chinesecanfly99/cds523-case-study；根据用户后续明确要求设为Public，任何人可以查看。
+- [x] G02｜上传9个文件：英文Notebook、原始data.zip、柱状图PNG、交互地图HTML、中文讲解、执行清单、README、requirements.txt及.gitignore。
+- [x] G03｜验证上传：初次作业提交62c670481bb6ea812df628314b83ef2bb5ee1c43已进入main；远端9个文件的Git blob SHA及大小与本地逐一匹配。
+
+仓库链接：https://github.com/chinesecanfly99/cds523-case-study 。GitHub备份与分享已完成；Moodle正式提交仍待本人完成。
