@@ -1,0 +1,1884 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_e760fa99f3f640c93d26d4df7a06c247 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 680.0px;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+<aside aria-label="Map legend" style="position:absolute;top:15px;left:60px;
+ z-index:1000;background:white;border:1px solid #bcc8d4;border-radius:6px;
+ padding:12px 16px;font:13px Arial,sans-serif;box-shadow:0 2px 7px #0002">
+ <b>Hong Kong | 2025</b><br>
+ <span style="color:#2187c2">&#9679;</span> Districts: mean daily maximum RH (%)<br>
+ <span style="color:#d63e2a">&#9679;</span> Stations: mean daily maximum AQHI<br>
+ <small>Click a marker for its annual value.</small>
+</aside>
+    
+            <div class="folium-map" id="map_e760fa99f3f640c93d26d4df7a06c247" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_e760fa99f3f640c93d26d4df7a06c247 = L.map(
+                "map_e760fa99f3f640c93d26d4df7a06c247",
+                {
+                    center: [22.36, 114.13],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 11,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+            L.control.scale().addTo(map_e760fa99f3f640c93d26d4df7a06c247);
+
+            
+
+        
+    
+            var tile_layer_4fcc7b71bf9942b32828ff0b9bec181a = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_4fcc7b71bf9942b32828ff0b9bec181a.addTo(map_e760fa99f3f640c93d26d4df7a06c247);
+        
+    
+            var feature_group_4772aa4610a8049d1d0b0fd76e32c407 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_610e748c5c4d62b4c135b80b71a82101 = L.marker(
+                [22.28666, 114.15497],
+                {
+}
+            ).addTo(feature_group_4772aa4610a8049d1d0b0fd76e32c407);
+        
+    
+            var icon_5a9d9f9b8889862e35fadf3a2a37bb3a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_14a10951fa261424751141acacb07b2e = L.popup({
+  "maxWidth": 340,
+});
+
+        
+            
+                var html_707039c92f378ba4aebe8008a6ab4856 = $(`<div id="html_707039c92f378ba4aebe8008a6ab4856" style="width: 100.0%; height: 100.0%;"><div style="font-family:Arial,sans-serif;min-width:245px;line-height:1.5"><h4 style="margin:0 0 8px">Central and Western</h4><div><b>Year:</b> 2025</div><div>Annual mean of daily maximum relative humidity:</div><div style="font-size:20px;font-weight:bold;margin-top:5px">91.02%</div></div></div>`)[0];
+                popup_14a10951fa261424751141acacb07b2e.setContent(html_707039c92f378ba4aebe8008a6ab4856);
+            
+        
+
+        marker_610e748c5c4d62b4c135b80b71a82101.bindPopup(popup_14a10951fa261424751141acacb07b2e)
+        ;
+
+        
+    
+    
+            marker_610e748c5c4d62b4c135b80b71a82101.bindTooltip(
+                `<div>
+                     Central and Western - humidity
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_610e748c5c4d62b4c135b80b71a82101.setIcon(icon_5a9d9f9b8889862e35fadf3a2a37bb3a);
+            
+    
+            var marker_4da43b57f0c513628a45623e86bcdcc0 = L.marker(
+                [22.28411, 114.22414],
+                {
+}
+            ).addTo(feature_group_4772aa4610a8049d1d0b0fd76e32c407);
+        
+    
+            var icon_5c75ffc9482e540f9f6cea39d02fbbb8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ec3991ce6bfacd375ae457fce50a07a9 = L.popup({
+  "maxWidth": 340,
+});
+
+        
+            
+                var html_6f274abf8dfbed86fbba382ee985b2ae = $(`<div id="html_6f274abf8dfbed86fbba382ee985b2ae" style="width: 100.0%; height: 100.0%;"><div style="font-family:Arial,sans-serif;min-width:245px;line-height:1.5"><h4 style="margin:0 0 8px">Eastern</h4><div><b>Year:</b> 2025</div><div>Annual mean of daily maximum relative humidity:</div><div style="font-size:20px;font-weight:bold;margin-top:5px">90.99%</div></div></div>`)[0];
+                popup_ec3991ce6bfacd375ae457fce50a07a9.setContent(html_6f274abf8dfbed86fbba382ee985b2ae);
+            
+        
+
+        marker_4da43b57f0c513628a45623e86bcdcc0.bindPopup(popup_ec3991ce6bfacd375ae457fce50a07a9)
+        ;
+
+        
+    
+    
+            marker_4da43b57f0c513628a45623e86bcdcc0.bindTooltip(
+                `<div>
+                     Eastern - humidity
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_4da43b57f0c513628a45623e86bcdcc0.setIcon(icon_5c75ffc9482e540f9f6cea39d02fbbb8);
+            
+    
+            var marker_cde289c1be9a422ee7cbe3c1eeb8792f = L.marker(
+                [22.26114, 113.94608],
+                {
+}
+            ).addTo(feature_group_4772aa4610a8049d1d0b0fd76e32c407);
+        
+    
+            var icon_1523cbd619bd1d69012635487e293305 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_07f2f10ef59f06149dd17362688c8b73 = L.popup({
+  "maxWidth": 340,
+});
+
+        
+            
+                var html_94abd30ac9c4fb1facb96d2ce2682e2d = $(`<div id="html_94abd30ac9c4fb1facb96d2ce2682e2d" style="width: 100.0%; height: 100.0%;"><div style="font-family:Arial,sans-serif;min-width:245px;line-height:1.5"><h4 style="margin:0 0 8px">Islands</h4><div><b>Year:</b> 2025</div><div>Annual mean of daily maximum relative humidity:</div><div style="font-size:20px;font-weight:bold;margin-top:5px">89.76%</div></div></div>`)[0];
+                popup_07f2f10ef59f06149dd17362688c8b73.setContent(html_94abd30ac9c4fb1facb96d2ce2682e2d);
+            
+        
+
+        marker_cde289c1be9a422ee7cbe3c1eeb8792f.bindPopup(popup_07f2f10ef59f06149dd17362688c8b73)
+        ;
+
+        
+    
+    
+            marker_cde289c1be9a422ee7cbe3c1eeb8792f.bindTooltip(
+                `<div>
+                     Islands - humidity
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_cde289c1be9a422ee7cbe3c1eeb8792f.setIcon(icon_1523cbd619bd1d69012635487e293305);
+            
+    
+            var marker_68e10f2e5e9ce4a371792c736406c361 = L.marker(
+                [22.3282, 114.19155],
+                {
+}
+            ).addTo(feature_group_4772aa4610a8049d1d0b0fd76e32c407);
+        
+    
+            var icon_cf98761d36952cbf692646fc6624a574 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e5e79cd05715bfe744f9c2a7e0414c8f = L.popup({
+  "maxWidth": 340,
+});
+
+        
+            
+                var html_a33dcc3829856739b3c699918842cf9b = $(`<div id="html_a33dcc3829856739b3c699918842cf9b" style="width: 100.0%; height: 100.0%;"><div style="font-family:Arial,sans-serif;min-width:245px;line-height:1.5"><h4 style="margin:0 0 8px">Kowloon City</h4><div><b>Year:</b> 2025</div><div>Annual mean of daily maximum relative humidity:</div><div style="font-size:20px;font-weight:bold;margin-top:5px">90.99%</div></div></div>`)[0];
+                popup_e5e79cd05715bfe744f9c2a7e0414c8f.setContent(html_a33dcc3829856739b3c699918842cf9b);
+            
+        
+
+        marker_68e10f2e5e9ce4a371792c736406c361.bindPopup(popup_e5e79cd05715bfe744f9c2a7e0414c8f)
+        ;
+
+        
+    
+    
+            marker_68e10f2e5e9ce4a371792c736406c361.bindTooltip(
+                `<div>
+                     Kowloon City - humidity
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_68e10f2e5e9ce4a371792c736406c361.setIcon(icon_cf98761d36952cbf692646fc6624a574);
+            
+    
+            var marker_6208b092c7b49f4d7d2fdc5c992bf88f = L.marker(
+                [22.35488, 114.08401],
+                {
+}
+            ).addTo(feature_group_4772aa4610a8049d1d0b0fd76e32c407);
+        
+    
+            var icon_d1100b98c39c40ac97eff78b96ca9bbd = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c168d3ca7e19b149f491e34ed08b3660 = L.popup({
+  "maxWidth": 340,
+});
+
+        
+            
+                var html_584d69338bb60c64f5ac5f99c1102b18 = $(`<div id="html_584d69338bb60c64f5ac5f99c1102b18" style="width: 100.0%; height: 100.0%;"><div style="font-family:Arial,sans-serif;min-width:245px;line-height:1.5"><h4 style="margin:0 0 8px">Kwai Tsing</h4><div><b>Year:</b> 2025</div><div>Annual mean of daily maximum relative humidity:</div><div style="font-size:20px;font-weight:bold;margin-top:5px">89.96%</div></div></div>`)[0];
+                popup_c168d3ca7e19b149f491e34ed08b3660.setContent(html_584d69338bb60c64f5ac5f99c1102b18);
+            
+        
+
+        marker_6208b092c7b49f4d7d2fdc5c992bf88f.bindPopup(popup_c168d3ca7e19b149f491e34ed08b3660)
+        ;
+
+        
+    
+    
+            marker_6208b092c7b49f4d7d2fdc5c992bf88f.bindTooltip(
+                `<div>
+                     Kwai Tsing - humidity
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_6208b092c7b49f4d7d2fdc5c992bf88f.setIcon(icon_d1100b98c39c40ac97eff78b96ca9bbd);
+            
+    
+            var marker_6f1dcd7e5319d9433e4ad0551aa24863 = L.marker(
+                [22.31326, 114.22581],
+                {
+}
+            ).addTo(feature_group_4772aa4610a8049d1d0b0fd76e32c407);
+        
+    
+            var icon_a2d06880175055cbf2e27b153bbcae77 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e88dd9818030e702d5b68c914174b6a8 = L.popup({
+  "maxWidth": 340,
+});
+
+        
+            
+                var html_6f81827f124e3e3319c0828fcc16ffb3 = $(`<div id="html_6f81827f124e3e3319c0828fcc16ffb3" style="width: 100.0%; height: 100.0%;"><div style="font-family:Arial,sans-serif;min-width:245px;line-height:1.5"><h4 style="margin:0 0 8px">Kwun Tong</h4><div><b>Year:</b> 2025</div><div>Annual mean of daily maximum relative humidity:</div><div style="font-size:20px;font-weight:bold;margin-top:5px">90.99%</div></div></div>`)[0];
+                popup_e88dd9818030e702d5b68c914174b6a8.setContent(html_6f81827f124e3e3319c0828fcc16ffb3);
+            
+        
+
+        marker_6f1dcd7e5319d9433e4ad0551aa24863.bindPopup(popup_e88dd9818030e702d5b68c914174b6a8)
+        ;
+
+        
+    
+    
+            marker_6f1dcd7e5319d9433e4ad0551aa24863.bindTooltip(
+                `<div>
+                     Kwun Tong - humidity
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_6f1dcd7e5319d9433e4ad0551aa24863.setIcon(icon_a2d06880175055cbf2e27b153bbcae77);
+            
+    
+            var marker_de6542e9abc531c07ebf2fe765bae580 = L.marker(
+                [22.49471, 114.13812],
+                {
+}
+            ).addTo(feature_group_4772aa4610a8049d1d0b0fd76e32c407);
+        
+    
+            var icon_29529989565da7909feed743a80851e0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ffd4ea3259ae637702aea6d981d1075f = L.popup({
+  "maxWidth": 340,
+});
+
+        
+            
+                var html_a2f709ecea9055dc63879250441a3bf7 = $(`<div id="html_a2f709ecea9055dc63879250441a3bf7" style="width: 100.0%; height: 100.0%;"><div style="font-family:Arial,sans-serif;min-width:245px;line-height:1.5"><h4 style="margin:0 0 8px">North</h4><div><b>Year:</b> 2025</div><div>Annual mean of daily maximum relative humidity:</div><div style="font-size:20px;font-weight:bold;margin-top:5px">94.17%</div></div></div>`)[0];
+                popup_ffd4ea3259ae637702aea6d981d1075f.setContent(html_a2f709ecea9055dc63879250441a3bf7);
+            
+        
+
+        marker_de6542e9abc531c07ebf2fe765bae580.bindPopup(popup_ffd4ea3259ae637702aea6d981d1075f)
+        ;
+
+        
+    
+    
+            marker_de6542e9abc531c07ebf2fe765bae580.bindTooltip(
+                `<div>
+                     North - humidity
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_de6542e9abc531c07ebf2fe765bae580.setIcon(icon_29529989565da7909feed743a80851e0);
+            
+    
+            var marker_7a75ce795a08ae3f6ebd711317ca462a = L.marker(
+                [22.38143, 114.27052],
+                {
+}
+            ).addTo(feature_group_4772aa4610a8049d1d0b0fd76e32c407);
+        
+    
+            var icon_7af2a5b35a3b1ef901a4d86258711469 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b95067fbc68a5cabea00b5a26ed17dcd = L.popup({
+  "maxWidth": 340,
+});
+
+        
+            
+                var html_e9a9b377bb0563a73661ebf637ca2bc2 = $(`<div id="html_e9a9b377bb0563a73661ebf637ca2bc2" style="width: 100.0%; height: 100.0%;"><div style="font-family:Arial,sans-serif;min-width:245px;line-height:1.5"><h4 style="margin:0 0 8px">Sai Kung</h4><div><b>Year:</b> 2025</div><div>Annual mean of daily maximum relative humidity:</div><div style="font-size:20px;font-weight:bold;margin-top:5px">90.58%</div></div></div>`)[0];
+                popup_b95067fbc68a5cabea00b5a26ed17dcd.setContent(html_e9a9b377bb0563a73661ebf637ca2bc2);
+            
+        
+
+        marker_7a75ce795a08ae3f6ebd711317ca462a.bindPopup(popup_b95067fbc68a5cabea00b5a26ed17dcd)
+        ;
+
+        
+    
+    
+            marker_7a75ce795a08ae3f6ebd711317ca462a.bindTooltip(
+                `<div>
+                     Sai Kung - humidity
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_7a75ce795a08ae3f6ebd711317ca462a.setIcon(icon_7af2a5b35a3b1ef901a4d86258711469);
+            
+    
+            var marker_db27dd62cc3eae4610e379dd8e1026c1 = L.marker(
+                [22.38715, 114.19534],
+                {
+}
+            ).addTo(feature_group_4772aa4610a8049d1d0b0fd76e32c407);
+        
+    
+            var icon_6ab2ece0179f67ed500cd347227c2672 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6d8ff6c7ae526f8766987641e7062e08 = L.popup({
+  "maxWidth": 340,
+});
+
+        
+            
+                var html_3a5abab99b7e411ac13028982175657c = $(`<div id="html_3a5abab99b7e411ac13028982175657c" style="width: 100.0%; height: 100.0%;"><div style="font-family:Arial,sans-serif;min-width:245px;line-height:1.5"><h4 style="margin:0 0 8px">Sha Tin</h4><div><b>Year:</b> 2025</div><div>Annual mean of daily maximum relative humidity:</div><div style="font-size:20px;font-weight:bold;margin-top:5px">93.65%</div></div></div>`)[0];
+                popup_6d8ff6c7ae526f8766987641e7062e08.setContent(html_3a5abab99b7e411ac13028982175657c);
+            
+        
+
+        marker_db27dd62cc3eae4610e379dd8e1026c1.bindPopup(popup_6d8ff6c7ae526f8766987641e7062e08)
+        ;
+
+        
+    
+    
+            marker_db27dd62cc3eae4610e379dd8e1026c1.bindTooltip(
+                `<div>
+                     Sha Tin - humidity
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_db27dd62cc3eae4610e379dd8e1026c1.setIcon(icon_6ab2ece0179f67ed500cd347227c2672);
+            
+    
+            var marker_c297102e86a16322f0d397ab075041f3 = L.marker(
+                [22.33074, 114.1622],
+                {
+}
+            ).addTo(feature_group_4772aa4610a8049d1d0b0fd76e32c407);
+        
+    
+            var icon_427e14d05344d53be2b3c9955818775f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c15b370a87af620d331fcc7dc9eeaf80 = L.popup({
+  "maxWidth": 340,
+});
+
+        
+            
+                var html_e88e0783cdc9f79eafcd271188157da5 = $(`<div id="html_e88e0783cdc9f79eafcd271188157da5" style="width: 100.0%; height: 100.0%;"><div style="font-family:Arial,sans-serif;min-width:245px;line-height:1.5"><h4 style="margin:0 0 8px">Sham Shui Po</h4><div><b>Year:</b> 2025</div><div>Annual mean of daily maximum relative humidity:</div><div style="font-size:20px;font-weight:bold;margin-top:5px">90.99%</div></div></div>`)[0];
+                popup_c15b370a87af620d331fcc7dc9eeaf80.setContent(html_e88e0783cdc9f79eafcd271188157da5);
+            
+        
+
+        marker_c297102e86a16322f0d397ab075041f3.bindPopup(popup_c15b370a87af620d331fcc7dc9eeaf80)
+        ;
+
+        
+    
+    
+            marker_c297102e86a16322f0d397ab075041f3.bindTooltip(
+                `<div>
+                     Sham Shui Po - humidity
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c297102e86a16322f0d397ab075041f3.setIcon(icon_427e14d05344d53be2b3c9955818775f);
+            
+    
+            var marker_b44cb52add0689b8d4d743d66a03f252 = L.marker(
+                [22.24725, 114.15884],
+                {
+}
+            ).addTo(feature_group_4772aa4610a8049d1d0b0fd76e32c407);
+        
+    
+            var icon_edcdeab8dba5f29165bb26b52ddbe2c9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e9835a30f71216e54f857bbf8e978b5d = L.popup({
+  "maxWidth": 340,
+});
+
+        
+            
+                var html_ac12043634a1c1da0864b65b4b32f6c7 = $(`<div id="html_ac12043634a1c1da0864b65b4b32f6c7" style="width: 100.0%; height: 100.0%;"><div style="font-family:Arial,sans-serif;min-width:245px;line-height:1.5"><h4 style="margin:0 0 8px">Southern</h4><div><b>Year:</b> 2025</div><div>Annual mean of daily maximum relative humidity:</div><div style="font-size:20px;font-weight:bold;margin-top:5px">91.02%</div></div></div>`)[0];
+                popup_e9835a30f71216e54f857bbf8e978b5d.setContent(html_ac12043634a1c1da0864b65b4b32f6c7);
+            
+        
+
+        marker_b44cb52add0689b8d4d743d66a03f252.bindPopup(popup_e9835a30f71216e54f857bbf8e978b5d)
+        ;
+
+        
+    
+    
+            marker_b44cb52add0689b8d4d743d66a03f252.bindTooltip(
+                `<div>
+                     Southern - humidity
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_b44cb52add0689b8d4d743d66a03f252.setIcon(icon_edcdeab8dba5f29165bb26b52ddbe2c9);
+            
+    
+            var marker_0c9795b89f9e80358ba4b6342ad08a66 = L.marker(
+                [22.45085, 114.16422],
+                {
+}
+            ).addTo(feature_group_4772aa4610a8049d1d0b0fd76e32c407);
+        
+    
+            var icon_e8d0a5b6c06aee982a2e370c5f4719fd = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_15b5a5bf11e93be5d597b53d818b113a = L.popup({
+  "maxWidth": 340,
+});
+
+        
+            
+                var html_5ebabd228460bfedf4f8132fc299ebf4 = $(`<div id="html_5ebabd228460bfedf4f8132fc299ebf4" style="width: 100.0%; height: 100.0%;"><div style="font-family:Arial,sans-serif;min-width:245px;line-height:1.5"><h4 style="margin:0 0 8px">Tai Po</h4><div><b>Year:</b> 2025</div><div>Annual mean of daily maximum relative humidity:</div><div style="font-size:20px;font-weight:bold;margin-top:5px">94.17%</div></div></div>`)[0];
+                popup_15b5a5bf11e93be5d597b53d818b113a.setContent(html_5ebabd228460bfedf4f8132fc299ebf4);
+            
+        
+
+        marker_0c9795b89f9e80358ba4b6342ad08a66.bindPopup(popup_15b5a5bf11e93be5d597b53d818b113a)
+        ;
+
+        
+    
+    
+            marker_0c9795b89f9e80358ba4b6342ad08a66.bindTooltip(
+                `<div>
+                     Tai Po - humidity
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0c9795b89f9e80358ba4b6342ad08a66.setIcon(icon_e8d0a5b6c06aee982a2e370c5f4719fd);
+            
+    
+            var marker_e88f8c9b019345910aad1871db6977fc = L.marker(
+                [22.36281, 114.12907],
+                {
+}
+            ).addTo(feature_group_4772aa4610a8049d1d0b0fd76e32c407);
+        
+    
+            var icon_f0c112430e9d32778c097c6eaf536f95 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_49f09ab2bb2afeb29f3d210a4393cc66 = L.popup({
+  "maxWidth": 340,
+});
+
+        
+            
+                var html_d302f9b4a011c9715c6c2dc7b049a35e = $(`<div id="html_d302f9b4a011c9715c6c2dc7b049a35e" style="width: 100.0%; height: 100.0%;"><div style="font-family:Arial,sans-serif;min-width:245px;line-height:1.5"><h4 style="margin:0 0 8px">Tsuen Wan</h4><div><b>Year:</b> 2025</div><div>Annual mean of daily maximum relative humidity:</div><div style="font-size:20px;font-weight:bold;margin-top:5px">93.14%</div></div></div>`)[0];
+                popup_49f09ab2bb2afeb29f3d210a4393cc66.setContent(html_d302f9b4a011c9715c6c2dc7b049a35e);
+            
+        
+
+        marker_e88f8c9b019345910aad1871db6977fc.bindPopup(popup_49f09ab2bb2afeb29f3d210a4393cc66)
+        ;
+
+        
+    
+    
+            marker_e88f8c9b019345910aad1871db6977fc.bindTooltip(
+                `<div>
+                     Tsuen Wan - humidity
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_e88f8c9b019345910aad1871db6977fc.setIcon(icon_f0c112430e9d32778c097c6eaf536f95);
+            
+    
+            var marker_989925b58a900f6db93d0536c95cd4bf = L.marker(
+                [22.39163, 113.977089],
+                {
+}
+            ).addTo(feature_group_4772aa4610a8049d1d0b0fd76e32c407);
+        
+    
+            var icon_61b6d1f09108c5002a15c09aae28aeaf = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_279f90be19d981720b418cdb135df455 = L.popup({
+  "maxWidth": 340,
+});
+
+        
+            
+                var html_118b53f33a7f7b4c41c4b06330a5e65d = $(`<div id="html_118b53f33a7f7b4c41c4b06330a5e65d" style="width: 100.0%; height: 100.0%;"><div style="font-family:Arial,sans-serif;min-width:245px;line-height:1.5"><h4 style="margin:0 0 8px">Tuen Mun</h4><div><b>Year:</b> 2025</div><div>Annual mean of daily maximum relative humidity:</div><div style="font-size:20px;font-weight:bold;margin-top:5px">88.87%</div></div></div>`)[0];
+                popup_279f90be19d981720b418cdb135df455.setContent(html_118b53f33a7f7b4c41c4b06330a5e65d);
+            
+        
+
+        marker_989925b58a900f6db93d0536c95cd4bf.bindPopup(popup_279f90be19d981720b418cdb135df455)
+        ;
+
+        
+    
+    
+            marker_989925b58a900f6db93d0536c95cd4bf.bindTooltip(
+                `<div>
+                     Tuen Mun - humidity
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_989925b58a900f6db93d0536c95cd4bf.setIcon(icon_61b6d1f09108c5002a15c09aae28aeaf);
+            
+    
+            var marker_8acd9eb904c7aae745aa111abdd3d6d3 = L.marker(
+                [22.27968, 114.17168],
+                {
+}
+            ).addTo(feature_group_4772aa4610a8049d1d0b0fd76e32c407);
+        
+    
+            var icon_2f315d4c1ef8f166f74a206017f56b8f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_538d87d4eef0fc2802a671a3fb7a5e9b = L.popup({
+  "maxWidth": 340,
+});
+
+        
+            
+                var html_85375e845c097fdeb9af9c8dc3348f11 = $(`<div id="html_85375e845c097fdeb9af9c8dc3348f11" style="width: 100.0%; height: 100.0%;"><div style="font-family:Arial,sans-serif;min-width:245px;line-height:1.5"><h4 style="margin:0 0 8px">Wan Chai</h4><div><b>Year:</b> 2025</div><div>Annual mean of daily maximum relative humidity:</div><div style="font-size:20px;font-weight:bold;margin-top:5px">91.02%</div></div></div>`)[0];
+                popup_538d87d4eef0fc2802a671a3fb7a5e9b.setContent(html_85375e845c097fdeb9af9c8dc3348f11);
+            
+        
+
+        marker_8acd9eb904c7aae745aa111abdd3d6d3.bindPopup(popup_538d87d4eef0fc2802a671a3fb7a5e9b)
+        ;
+
+        
+    
+    
+            marker_8acd9eb904c7aae745aa111abdd3d6d3.bindTooltip(
+                `<div>
+                     Wan Chai - humidity
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_8acd9eb904c7aae745aa111abdd3d6d3.setIcon(icon_2f315d4c1ef8f166f74a206017f56b8f);
+            
+    
+            var marker_587ac314153ebcf841532fd5e1f6bba6 = L.marker(
+                [22.33353, 114.19686],
+                {
+}
+            ).addTo(feature_group_4772aa4610a8049d1d0b0fd76e32c407);
+        
+    
+            var icon_07ab458b44f42f07f0f523831545e9cc = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1d51509de3988a209eda762743ec3548 = L.popup({
+  "maxWidth": 340,
+});
+
+        
+            
+                var html_2bca9dafb71ea93490ce0c8be4f5b6ae = $(`<div id="html_2bca9dafb71ea93490ce0c8be4f5b6ae" style="width: 100.0%; height: 100.0%;"><div style="font-family:Arial,sans-serif;min-width:245px;line-height:1.5"><h4 style="margin:0 0 8px">Wong Tai Sin</h4><div><b>Year:</b> 2025</div><div>Annual mean of daily maximum relative humidity:</div><div style="font-size:20px;font-weight:bold;margin-top:5px">90.99%</div></div></div>`)[0];
+                popup_1d51509de3988a209eda762743ec3548.setContent(html_2bca9dafb71ea93490ce0c8be4f5b6ae);
+            
+        
+
+        marker_587ac314153ebcf841532fd5e1f6bba6.bindPopup(popup_1d51509de3988a209eda762743ec3548)
+        ;
+
+        
+    
+    
+            marker_587ac314153ebcf841532fd5e1f6bba6.bindTooltip(
+                `<div>
+                     Wong Tai Sin - humidity
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_587ac314153ebcf841532fd5e1f6bba6.setIcon(icon_07ab458b44f42f07f0f523831545e9cc);
+            
+    
+            var marker_08d79a4cddac83f41118f034660ead1a = L.marker(
+                [22.32138, 114.1726],
+                {
+}
+            ).addTo(feature_group_4772aa4610a8049d1d0b0fd76e32c407);
+        
+    
+            var icon_923db2c83da208b918f9b29a70bbd2f2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3f6f8969d275e092842c9cde6513f34f = L.popup({
+  "maxWidth": 340,
+});
+
+        
+            
+                var html_152f54c18a6a9f36542bf8a7a0024d74 = $(`<div id="html_152f54c18a6a9f36542bf8a7a0024d74" style="width: 100.0%; height: 100.0%;"><div style="font-family:Arial,sans-serif;min-width:245px;line-height:1.5"><h4 style="margin:0 0 8px">Yau Tsim Mong</h4><div><b>Year:</b> 2025</div><div>Annual mean of daily maximum relative humidity:</div><div style="font-size:20px;font-weight:bold;margin-top:5px">90.99%</div></div></div>`)[0];
+                popup_3f6f8969d275e092842c9cde6513f34f.setContent(html_152f54c18a6a9f36542bf8a7a0024d74);
+            
+        
+
+        marker_08d79a4cddac83f41118f034660ead1a.bindPopup(popup_3f6f8969d275e092842c9cde6513f34f)
+        ;
+
+        
+    
+    
+            marker_08d79a4cddac83f41118f034660ead1a.bindTooltip(
+                `<div>
+                     Yau Tsim Mong - humidity
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_08d79a4cddac83f41118f034660ead1a.setIcon(icon_923db2c83da208b918f9b29a70bbd2f2);
+            
+    
+            var marker_4aa24f6fdee6a19e7d1baf6cd3a7d318 = L.marker(
+                [22.44559, 114.02218],
+                {
+}
+            ).addTo(feature_group_4772aa4610a8049d1d0b0fd76e32c407);
+        
+    
+            var icon_5ddfef722ae77dc40543fc87d3b67e10 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3d9574d974f2a4b80c67da5f5942983f = L.popup({
+  "maxWidth": 340,
+});
+
+        
+            
+                var html_a3d54f3aff5a57c5961b2e550e722e0e = $(`<div id="html_a3d54f3aff5a57c5961b2e550e722e0e" style="width: 100.0%; height: 100.0%;"><div style="font-family:Arial,sans-serif;min-width:245px;line-height:1.5"><h4 style="margin:0 0 8px">Yuen Long</h4><div><b>Year:</b> 2025</div><div>Annual mean of daily maximum relative humidity:</div><div style="font-size:20px;font-weight:bold;margin-top:5px">90.40%</div></div></div>`)[0];
+                popup_3d9574d974f2a4b80c67da5f5942983f.setContent(html_a3d54f3aff5a57c5961b2e550e722e0e);
+            
+        
+
+        marker_4aa24f6fdee6a19e7d1baf6cd3a7d318.bindPopup(popup_3d9574d974f2a4b80c67da5f5942983f)
+        ;
+
+        
+    
+    
+            marker_4aa24f6fdee6a19e7d1baf6cd3a7d318.bindTooltip(
+                `<div>
+                     Yuen Long - humidity
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_4aa24f6fdee6a19e7d1baf6cd3a7d318.setIcon(icon_5ddfef722ae77dc40543fc87d3b67e10);
+            
+    
+            feature_group_4772aa4610a8049d1d0b0fd76e32c407.addTo(map_e760fa99f3f640c93d26d4df7a06c247);
+        
+    
+            var feature_group_9e10a3d7a9ff648aa4f642e5e8ecf41f = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_6a1f873c474c9eeee04ad8a1302edc46 = L.marker(
+                [22.28014, 114.18508],
+                {
+}
+            ).addTo(feature_group_9e10a3d7a9ff648aa4f642e5e8ecf41f);
+        
+    
+            var icon_5fafd76a91b59d3d1bf7493864d7e404 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_87aaf65403c74d157dbe7e77266baf7a = L.popup({
+  "maxWidth": 340,
+});
+
+        
+            
+                var html_65afec85900d39cb9ac6256ba6f1e83f = $(`<div id="html_65afec85900d39cb9ac6256ba6f1e83f" style="width: 100.0%; height: 100.0%;"><div style="font-family:Arial,sans-serif;min-width:245px;line-height:1.5"><h4 style="margin:0 0 8px">Causeway Bay</h4><div><b>Year:</b> 2025</div><div>Annual mean of daily maximum AQHI:</div><div style="font-size:20px;font-weight:bold;margin-top:5px">4.33</div></div></div>`)[0];
+                popup_87aaf65403c74d157dbe7e77266baf7a.setContent(html_65afec85900d39cb9ac6256ba6f1e83f);
+            
+        
+
+        marker_6a1f873c474c9eeee04ad8a1302edc46.bindPopup(popup_87aaf65403c74d157dbe7e77266baf7a)
+        ;
+
+        
+    
+    
+            marker_6a1f873c474c9eeee04ad8a1302edc46.bindTooltip(
+                `<div>
+                     Causeway Bay - AQHI
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_6a1f873c474c9eeee04ad8a1302edc46.setIcon(icon_5fafd76a91b59d3d1bf7493864d7e404);
+            
+    
+            var marker_3e0914dcb2778c8c701aba6e21fea36c = L.marker(
+                [22.2818, 114.15812],
+                {
+}
+            ).addTo(feature_group_9e10a3d7a9ff648aa4f642e5e8ecf41f);
+        
+    
+            var icon_a1e4a69709373d748b2cb21ea9ca68d7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_22944cc52ef56bcc5fce38bc96262adc = L.popup({
+  "maxWidth": 340,
+});
+
+        
+            
+                var html_eb90dcea897bdc991f0279a539e569b8 = $(`<div id="html_eb90dcea897bdc991f0279a539e569b8" style="width: 100.0%; height: 100.0%;"><div style="font-family:Arial,sans-serif;min-width:245px;line-height:1.5"><h4 style="margin:0 0 8px">Central</h4><div><b>Year:</b> 2025</div><div>Annual mean of daily maximum AQHI:</div><div style="font-size:20px;font-weight:bold;margin-top:5px">4.24</div></div></div>`)[0];
+                popup_22944cc52ef56bcc5fce38bc96262adc.setContent(html_eb90dcea897bdc991f0279a539e569b8);
+            
+        
+
+        marker_3e0914dcb2778c8c701aba6e21fea36c.bindPopup(popup_22944cc52ef56bcc5fce38bc96262adc)
+        ;
+
+        
+    
+    
+            marker_3e0914dcb2778c8c701aba6e21fea36c.bindTooltip(
+                `<div>
+                     Central - AQHI
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_3e0914dcb2778c8c701aba6e21fea36c.setIcon(icon_a1e4a69709373d748b2cb21ea9ca68d7);
+            
+    
+            var marker_bd6189e1f27b6f816aaca9e5d79d31c0 = L.marker(
+                [22.284892, 114.144081],
+                {
+}
+            ).addTo(feature_group_9e10a3d7a9ff648aa4f642e5e8ecf41f);
+        
+    
+            var icon_d03d7dd54d021e38edcced2075778c01 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_384305d90a4d866a50de165a3313764c = L.popup({
+  "maxWidth": 340,
+});
+
+        
+            
+                var html_31546ac20c23114b56d37e4bf3dffb84 = $(`<div id="html_31546ac20c23114b56d37e4bf3dffb84" style="width: 100.0%; height: 100.0%;"><div style="font-family:Arial,sans-serif;min-width:245px;line-height:1.5"><h4 style="margin:0 0 8px">Central/Western</h4><div><b>Year:</b> 2025</div><div>Annual mean of daily maximum AQHI:</div><div style="font-size:20px;font-weight:bold;margin-top:5px">4.12</div></div></div>`)[0];
+                popup_384305d90a4d866a50de165a3313764c.setContent(html_31546ac20c23114b56d37e4bf3dffb84);
+            
+        
+
+        marker_bd6189e1f27b6f816aaca9e5d79d31c0.bindPopup(popup_384305d90a4d866a50de165a3313764c)
+        ;
+
+        
+    
+    
+            marker_bd6189e1f27b6f816aaca9e5d79d31c0.bindTooltip(
+                `<div>
+                     Central/Western - AQHI
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_bd6189e1f27b6f816aaca9e5d79d31c0.setIcon(icon_d03d7dd54d021e38edcced2075778c01);
+            
+    
+            var marker_bb6d12a63c4367dc485618aaaa66050e = L.marker(
+                [22.28295, 114.2194],
+                {
+}
+            ).addTo(feature_group_9e10a3d7a9ff648aa4f642e5e8ecf41f);
+        
+    
+            var icon_9bf98fcfb2d61cc406876e43d2fbf938 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e38840a3e8a07a23444354efdfb5290c = L.popup({
+  "maxWidth": 340,
+});
+
+        
+            
+                var html_b97fb579d4166db5dd63766fdd2e1032 = $(`<div id="html_b97fb579d4166db5dd63766fdd2e1032" style="width: 100.0%; height: 100.0%;"><div style="font-family:Arial,sans-serif;min-width:245px;line-height:1.5"><h4 style="margin:0 0 8px">Eastern</h4><div><b>Year:</b> 2025</div><div>Annual mean of daily maximum AQHI:</div><div style="font-size:20px;font-weight:bold;margin-top:5px">4.19</div></div></div>`)[0];
+                popup_e38840a3e8a07a23444354efdfb5290c.setContent(html_b97fb579d4166db5dd63766fdd2e1032);
+            
+        
+
+        marker_bb6d12a63c4367dc485618aaaa66050e.bindPopup(popup_e38840a3e8a07a23444354efdfb5290c)
+        ;
+
+        
+    
+    
+            marker_bb6d12a63c4367dc485618aaaa66050e.bindTooltip(
+                `<div>
+                     Eastern - AQHI
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_bb6d12a63c4367dc485618aaaa66050e.setIcon(icon_9bf98fcfb2d61cc406876e43d2fbf938);
+            
+    
+            var marker_6a4ab7001fc638e0796b475300ac6d20 = L.marker(
+                [22.35695, 114.12938],
+                {
+}
+            ).addTo(feature_group_9e10a3d7a9ff648aa4f642e5e8ecf41f);
+        
+    
+            var icon_7484ac00a4bb19b242809b609d1e4f40 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8e2c73318f9acee64b798147001fb621 = L.popup({
+  "maxWidth": 340,
+});
+
+        
+            
+                var html_9fb780944d5309673d3c3ad2d5f87cc2 = $(`<div id="html_9fb780944d5309673d3c3ad2d5f87cc2" style="width: 100.0%; height: 100.0%;"><div style="font-family:Arial,sans-serif;min-width:245px;line-height:1.5"><h4 style="margin:0 0 8px">Kwai Chung</h4><div><b>Year:</b> 2025</div><div>Annual mean of daily maximum AQHI:</div><div style="font-size:20px;font-weight:bold;margin-top:5px">4.06</div></div></div>`)[0];
+                popup_8e2c73318f9acee64b798147001fb621.setContent(html_9fb780944d5309673d3c3ad2d5f87cc2);
+            
+        
+
+        marker_6a4ab7001fc638e0796b475300ac6d20.bindPopup(popup_8e2c73318f9acee64b798147001fb621)
+        ;
+
+        
+    
+    
+            marker_6a4ab7001fc638e0796b475300ac6d20.bindTooltip(
+                `<div>
+                     Kwai Chung - AQHI
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_6a4ab7001fc638e0796b475300ac6d20.setIcon(icon_7484ac00a4bb19b242809b609d1e4f40);
+            
+    
+            var marker_152c516b06ee30bec481edd2fcaed234 = L.marker(
+                [22.30981, 114.23151],
+                {
+}
+            ).addTo(feature_group_9e10a3d7a9ff648aa4f642e5e8ecf41f);
+        
+    
+            var icon_980e1b419eaf4f69a4cd6135bba275ec = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8c9f33dce797fc6dd17432492b737b83 = L.popup({
+  "maxWidth": 340,
+});
+
+        
+            
+                var html_a0f90beda87d70e3ffd1ee4037355d51 = $(`<div id="html_a0f90beda87d70e3ffd1ee4037355d51" style="width: 100.0%; height: 100.0%;"><div style="font-family:Arial,sans-serif;min-width:245px;line-height:1.5"><h4 style="margin:0 0 8px">Kwun Tong</h4><div><b>Year:</b> 2025</div><div>Annual mean of daily maximum AQHI:</div><div style="font-size:20px;font-weight:bold;margin-top:5px">4.05</div></div></div>`)[0];
+                popup_8c9f33dce797fc6dd17432492b737b83.setContent(html_a0f90beda87d70e3ffd1ee4037355d51);
+            
+        
+
+        marker_152c516b06ee30bec481edd2fcaed234.bindPopup(popup_8c9f33dce797fc6dd17432492b737b83)
+        ;
+
+        
+    
+    
+            marker_152c516b06ee30bec481edd2fcaed234.bindTooltip(
+                `<div>
+                     Kwun Tong - AQHI
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_152c516b06ee30bec481edd2fcaed234.setIcon(icon_980e1b419eaf4f69a4cd6135bba275ec);
+            
+    
+            var marker_96a3f2f2331a5798ade2635d7d23585b = L.marker(
+                [22.32261, 114.16826],
+                {
+}
+            ).addTo(feature_group_9e10a3d7a9ff648aa4f642e5e8ecf41f);
+        
+    
+            var icon_75aaf8b5e8ccf246bc2304bd0961f94c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8a608806d2674d8f2ad2470afe99d2a1 = L.popup({
+  "maxWidth": 340,
+});
+
+        
+            
+                var html_23a06447d42ca053ccbc5ea333f95a8c = $(`<div id="html_23a06447d42ca053ccbc5ea333f95a8c" style="width: 100.0%; height: 100.0%;"><div style="font-family:Arial,sans-serif;min-width:245px;line-height:1.5"><h4 style="margin:0 0 8px">Mong Kok</h4><div><b>Year:</b> 2025</div><div>Annual mean of daily maximum AQHI:</div><div style="font-size:20px;font-weight:bold;margin-top:5px">4.36</div></div></div>`)[0];
+                popup_8a608806d2674d8f2ad2470afe99d2a1.setContent(html_23a06447d42ca053ccbc5ea333f95a8c);
+            
+        
+
+        marker_96a3f2f2331a5798ade2635d7d23585b.bindPopup(popup_8a608806d2674d8f2ad2470afe99d2a1)
+        ;
+
+        
+    
+    
+            marker_96a3f2f2331a5798ade2635d7d23585b.bindTooltip(
+                `<div>
+                     Mong Kok - AQHI
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_96a3f2f2331a5798ade2635d7d23585b.setIcon(icon_75aaf8b5e8ccf246bc2304bd0961f94c);
+            
+    
+            var marker_26a27cb511169945263ac94de9d9341a = L.marker(
+                [22.49695, 114.12844],
+                {
+}
+            ).addTo(feature_group_9e10a3d7a9ff648aa4f642e5e8ecf41f);
+        
+    
+            var icon_c804a373faee89d79e7a324a0db10de7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_78e7df339eb1195aea9f4ae7c8e7dc51 = L.popup({
+  "maxWidth": 340,
+});
+
+        
+            
+                var html_9797b0084e640df9212e3a855abe1e55 = $(`<div id="html_9797b0084e640df9212e3a855abe1e55" style="width: 100.0%; height: 100.0%;"><div style="font-family:Arial,sans-serif;min-width:245px;line-height:1.5"><h4 style="margin:0 0 8px">North</h4><div><b>Year:</b> 2025</div><div>Annual mean of daily maximum AQHI:</div><div style="font-size:20px;font-weight:bold;margin-top:5px">4.25</div></div></div>`)[0];
+                popup_78e7df339eb1195aea9f4ae7c8e7dc51.setContent(html_9797b0084e640df9212e3a855abe1e55);
+            
+        
+
+        marker_26a27cb511169945263ac94de9d9341a.bindPopup(popup_78e7df339eb1195aea9f4ae7c8e7dc51)
+        ;
+
+        
+    
+    
+            marker_26a27cb511169945263ac94de9d9341a.bindTooltip(
+                `<div>
+                     North - AQHI
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_26a27cb511169945263ac94de9d9341a.setIcon(icon_c804a373faee89d79e7a324a0db10de7);
+            
+    
+            var marker_99d020e5953178730397d52d801fe491 = L.marker(
+                [22.37642, 114.18459],
+                {
+}
+            ).addTo(feature_group_9e10a3d7a9ff648aa4f642e5e8ecf41f);
+        
+    
+            var icon_a5672cc5992a4c1b06219ad08c0f2c0e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_308a51e07986034924223601c9adcaa9 = L.popup({
+  "maxWidth": 340,
+});
+
+        
+            
+                var html_19499bd4c412e2a68a77758a36de5545 = $(`<div id="html_19499bd4c412e2a68a77758a36de5545" style="width: 100.0%; height: 100.0%;"><div style="font-family:Arial,sans-serif;min-width:245px;line-height:1.5"><h4 style="margin:0 0 8px">Sha Tin</h4><div><b>Year:</b> 2025</div><div>Annual mean of daily maximum AQHI:</div><div style="font-size:20px;font-weight:bold;margin-top:5px">4.11</div></div></div>`)[0];
+                popup_308a51e07986034924223601c9adcaa9.setContent(html_19499bd4c412e2a68a77758a36de5545);
+            
+        
+
+        marker_99d020e5953178730397d52d801fe491.bindPopup(popup_308a51e07986034924223601c9adcaa9)
+        ;
+
+        
+    
+    
+            marker_99d020e5953178730397d52d801fe491.bindTooltip(
+                `<div>
+                     Sha Tin - AQHI
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_99d020e5953178730397d52d801fe491.setIcon(icon_a5672cc5992a4c1b06219ad08c0f2c0e);
+            
+    
+            var marker_963edad9058d8d29177adafe00c5b5dc = L.marker(
+                [22.33041, 114.15911],
+                {
+}
+            ).addTo(feature_group_9e10a3d7a9ff648aa4f642e5e8ecf41f);
+        
+    
+            var icon_835c670008920bfd31b3067e50056117 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_41aad67ff33c8713783c32a19274ac32 = L.popup({
+  "maxWidth": 340,
+});
+
+        
+            
+                var html_53b62a66d02157fe7713a797914c899a = $(`<div id="html_53b62a66d02157fe7713a797914c899a" style="width: 100.0%; height: 100.0%;"><div style="font-family:Arial,sans-serif;min-width:245px;line-height:1.5"><h4 style="margin:0 0 8px">Sham Shui Po</h4><div><b>Year:</b> 2025</div><div>Annual mean of daily maximum AQHI:</div><div style="font-size:20px;font-weight:bold;margin-top:5px">4.10</div></div></div>`)[0];
+                popup_41aad67ff33c8713783c32a19274ac32.setContent(html_53b62a66d02157fe7713a797914c899a);
+            
+        
+
+        marker_963edad9058d8d29177adafe00c5b5dc.bindPopup(popup_41aad67ff33c8713783c32a19274ac32)
+        ;
+
+        
+    
+    
+            marker_963edad9058d8d29177adafe00c5b5dc.bindTooltip(
+                `<div>
+                     Sham Shui Po - AQHI
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_963edad9058d8d29177adafe00c5b5dc.setIcon(icon_835c670008920bfd31b3067e50056117);
+            
+    
+            var marker_ff64af34988041aa9446ec017d78b1db = L.marker(
+                [22.24752, 114.15998],
+                {
+}
+            ).addTo(feature_group_9e10a3d7a9ff648aa4f642e5e8ecf41f);
+        
+    
+            var icon_c06ed07603a844fc3fc96ba3e63f1044 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3789058691bf115ea8a39f6cf323c009 = L.popup({
+  "maxWidth": 340,
+});
+
+        
+            
+                var html_0d21a4833e600976119b7a9b3464efb8 = $(`<div id="html_0d21a4833e600976119b7a9b3464efb8" style="width: 100.0%; height: 100.0%;"><div style="font-family:Arial,sans-serif;min-width:245px;line-height:1.5"><h4 style="margin:0 0 8px">Southern</h4><div><b>Year:</b> 2025</div><div>Annual mean of daily maximum AQHI:</div><div style="font-size:20px;font-weight:bold;margin-top:5px">4.19</div></div></div>`)[0];
+                popup_3789058691bf115ea8a39f6cf323c009.setContent(html_0d21a4833e600976119b7a9b3464efb8);
+            
+        
+
+        marker_ff64af34988041aa9446ec017d78b1db.bindPopup(popup_3789058691bf115ea8a39f6cf323c009)
+        ;
+
+        
+    
+    
+            marker_ff64af34988041aa9446ec017d78b1db.bindTooltip(
+                `<div>
+                     Southern - AQHI
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ff64af34988041aa9446ec017d78b1db.setIcon(icon_c06ed07603a844fc3fc96ba3e63f1044);
+            
+    
+            var marker_08e6a5d77b5634df77050159775e150c = L.marker(
+                [22.4511, 114.16426],
+                {
+}
+            ).addTo(feature_group_9e10a3d7a9ff648aa4f642e5e8ecf41f);
+        
+    
+            var icon_421c6a60c19bf4bf9e1da4d2108ed2a3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_fb86db4cf5c3ec409601bb2b4b871e08 = L.popup({
+  "maxWidth": 340,
+});
+
+        
+            
+                var html_66ce0bf5192891315f9c7c911a9f3730 = $(`<div id="html_66ce0bf5192891315f9c7c911a9f3730" style="width: 100.0%; height: 100.0%;"><div style="font-family:Arial,sans-serif;min-width:245px;line-height:1.5"><h4 style="margin:0 0 8px">Tai Po</h4><div><b>Year:</b> 2025</div><div>Annual mean of daily maximum AQHI:</div><div style="font-size:20px;font-weight:bold;margin-top:5px">4.24</div></div></div>`)[0];
+                popup_fb86db4cf5c3ec409601bb2b4b871e08.setContent(html_66ce0bf5192891315f9c7c911a9f3730);
+            
+        
+
+        marker_08e6a5d77b5634df77050159775e150c.bindPopup(popup_fb86db4cf5c3ec409601bb2b4b871e08)
+        ;
+
+        
+    
+    
+            marker_08e6a5d77b5634df77050159775e150c.bindTooltip(
+                `<div>
+                     Tai Po - AQHI
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_08e6a5d77b5634df77050159775e150c.setIcon(icon_421c6a60c19bf4bf9e1da4d2108ed2a3);
+            
+    
+            var marker_5cefa08b41eabd5851efab182d2a0d66 = L.marker(
+                [22.47129, 114.36072],
+                {
+}
+            ).addTo(feature_group_9e10a3d7a9ff648aa4f642e5e8ecf41f);
+        
+    
+            var icon_0cdfe4dffe00334602075ae87f6b74c2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c59f09d5da71b0e5bcdb5c042206f7fc = L.popup({
+  "maxWidth": 340,
+});
+
+        
+            
+                var html_a81347bcd17047d84e82efde52023d8e = $(`<div id="html_a81347bcd17047d84e82efde52023d8e" style="width: 100.0%; height: 100.0%;"><div style="font-family:Arial,sans-serif;min-width:245px;line-height:1.5"><h4 style="margin:0 0 8px">Tap Mun</h4><div><b>Year:</b> 2025</div><div>Annual mean of daily maximum AQHI:</div><div style="font-size:20px;font-weight:bold;margin-top:5px">4.22</div></div></div>`)[0];
+                popup_c59f09d5da71b0e5bcdb5c042206f7fc.setContent(html_a81347bcd17047d84e82efde52023d8e);
+            
+        
+
+        marker_5cefa08b41eabd5851efab182d2a0d66.bindPopup(popup_c59f09d5da71b0e5bcdb5c042206f7fc)
+        ;
+
+        
+    
+    
+            marker_5cefa08b41eabd5851efab182d2a0d66.bindTooltip(
+                `<div>
+                     Tap Mun - AQHI
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5cefa08b41eabd5851efab182d2a0d66.setIcon(icon_0cdfe4dffe00334602075ae87f6b74c2);
+            
+    
+            var marker_8edcf6fbe8bba5ae74827e83bc887e18 = L.marker(
+                [22.31786, 114.2601],
+                {
+}
+            ).addTo(feature_group_9e10a3d7a9ff648aa4f642e5e8ecf41f);
+        
+    
+            var icon_b3cd4a6b4f066d98e3cbd95e5b7105f2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1905fe9226d9702c18d621edbbb99ea8 = L.popup({
+  "maxWidth": 340,
+});
+
+        
+            
+                var html_6e08fe01e3c3d16b7e41ae19971877ac = $(`<div id="html_6e08fe01e3c3d16b7e41ae19971877ac" style="width: 100.0%; height: 100.0%;"><div style="font-family:Arial,sans-serif;min-width:245px;line-height:1.5"><h4 style="margin:0 0 8px">Tseung Kwan O</h4><div><b>Year:</b> 2025</div><div>Annual mean of daily maximum AQHI:</div><div style="font-size:20px;font-weight:bold;margin-top:5px">4.20</div></div></div>`)[0];
+                popup_1905fe9226d9702c18d621edbbb99ea8.setContent(html_6e08fe01e3c3d16b7e41ae19971877ac);
+            
+        
+
+        marker_8edcf6fbe8bba5ae74827e83bc887e18.bindPopup(popup_1905fe9226d9702c18d621edbbb99ea8)
+        ;
+
+        
+    
+    
+            marker_8edcf6fbe8bba5ae74827e83bc887e18.bindTooltip(
+                `<div>
+                     Tseung Kwan O - AQHI
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_8edcf6fbe8bba5ae74827e83bc887e18.setIcon(icon_b3cd4a6b4f066d98e3cbd95e5b7105f2);
+            
+    
+            var marker_ab1b0633a7add07a7e2447321e0d68c1 = L.marker(
+                [22.37163, 114.11456],
+                {
+}
+            ).addTo(feature_group_9e10a3d7a9ff648aa4f642e5e8ecf41f);
+        
+    
+            var icon_a678638660730bc0eb651d17d096bda7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b1812f5b73f3567738a48b067e872a82 = L.popup({
+  "maxWidth": 340,
+});
+
+        
+            
+                var html_25e997530d410f455efcb7c3940950c7 = $(`<div id="html_25e997530d410f455efcb7c3940950c7" style="width: 100.0%; height: 100.0%;"><div style="font-family:Arial,sans-serif;min-width:245px;line-height:1.5"><h4 style="margin:0 0 8px">Tsuen Wan</h4><div><b>Year:</b> 2025</div><div>Annual mean of daily maximum AQHI:</div><div style="font-size:20px;font-weight:bold;margin-top:5px">3.81</div></div></div>`)[0];
+                popup_b1812f5b73f3567738a48b067e872a82.setContent(html_25e997530d410f455efcb7c3940950c7);
+            
+        
+
+        marker_ab1b0633a7add07a7e2447321e0d68c1.bindPopup(popup_b1812f5b73f3567738a48b067e872a82)
+        ;
+
+        
+    
+    
+            marker_ab1b0633a7add07a7e2447321e0d68c1.bindTooltip(
+                `<div>
+                     Tsuen Wan - AQHI
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ab1b0633a7add07a7e2447321e0d68c1.setIcon(icon_a678638660730bc0eb651d17d096bda7);
+            
+    
+            var marker_555088f6b6b362e5f68638b87ed0b420 = L.marker(
+                [22.39112, 113.97679],
+                {
+}
+            ).addTo(feature_group_9e10a3d7a9ff648aa4f642e5e8ecf41f);
+        
+    
+            var icon_dc51c2972bdd971b203cbbc91c9f982f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e05578a79d8d01519662cc16c2177b36 = L.popup({
+  "maxWidth": 340,
+});
+
+        
+            
+                var html_5de2c490a2b6c21601424e0bceffb9ae = $(`<div id="html_5de2c490a2b6c21601424e0bceffb9ae" style="width: 100.0%; height: 100.0%;"><div style="font-family:Arial,sans-serif;min-width:245px;line-height:1.5"><h4 style="margin:0 0 8px">Tuen Mun</h4><div><b>Year:</b> 2025</div><div>Annual mean of daily maximum AQHI:</div><div style="font-size:20px;font-weight:bold;margin-top:5px">4.55</div></div></div>`)[0];
+                popup_e05578a79d8d01519662cc16c2177b36.setContent(html_5de2c490a2b6c21601424e0bceffb9ae);
+            
+        
+
+        marker_555088f6b6b362e5f68638b87ed0b420.bindPopup(popup_e05578a79d8d01519662cc16c2177b36)
+        ;
+
+        
+    
+    
+            marker_555088f6b6b362e5f68638b87ed0b420.bindTooltip(
+                `<div>
+                     Tuen Mun - AQHI
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_555088f6b6b362e5f68638b87ed0b420.setIcon(icon_dc51c2972bdd971b203cbbc91c9f982f);
+            
+    
+            var marker_38409529b32cfbf76241038e72bb2c9f = L.marker(
+                [22.28887, 113.94355],
+                {
+}
+            ).addTo(feature_group_9e10a3d7a9ff648aa4f642e5e8ecf41f);
+        
+    
+            var icon_8096efaaa98f72b2ccf08ed50c0cb7c7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7a88815036899cf64fd7e20429e7f34c = L.popup({
+  "maxWidth": 340,
+});
+
+        
+            
+                var html_e5d6468f638321de583de9ad30373592 = $(`<div id="html_e5d6468f638321de583de9ad30373592" style="width: 100.0%; height: 100.0%;"><div style="font-family:Arial,sans-serif;min-width:245px;line-height:1.5"><h4 style="margin:0 0 8px">Tung Chung</h4><div><b>Year:</b> 2025</div><div>Annual mean of daily maximum AQHI:</div><div style="font-size:20px;font-weight:bold;margin-top:5px">4.09</div></div></div>`)[0];
+                popup_7a88815036899cf64fd7e20429e7f34c.setContent(html_e5d6468f638321de583de9ad30373592);
+            
+        
+
+        marker_38409529b32cfbf76241038e72bb2c9f.bindPopup(popup_7a88815036899cf64fd7e20429e7f34c)
+        ;
+
+        
+    
+    
+            marker_38409529b32cfbf76241038e72bb2c9f.bindTooltip(
+                `<div>
+                     Tung Chung - AQHI
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_38409529b32cfbf76241038e72bb2c9f.setIcon(icon_8096efaaa98f72b2ccf08ed50c0cb7c7);
+            
+    
+            var marker_fa17602ab54179cc679944a6a6e26766 = L.marker(
+                [22.44506, 114.02279],
+                {
+}
+            ).addTo(feature_group_9e10a3d7a9ff648aa4f642e5e8ecf41f);
+        
+    
+            var icon_4224d789d43c5204a9f422823593763a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7774dbb805e4e888c58a1c54b8289ead = L.popup({
+  "maxWidth": 340,
+});
+
+        
+            
+                var html_ab4410a611c362e8f00fdeb2c3a96b66 = $(`<div id="html_ab4410a611c362e8f00fdeb2c3a96b66" style="width: 100.0%; height: 100.0%;"><div style="font-family:Arial,sans-serif;min-width:245px;line-height:1.5"><h4 style="margin:0 0 8px">Yuen Long</h4><div><b>Year:</b> 2025</div><div>Annual mean of daily maximum AQHI:</div><div style="font-size:20px;font-weight:bold;margin-top:5px">4.07</div></div></div>`)[0];
+                popup_7774dbb805e4e888c58a1c54b8289ead.setContent(html_ab4410a611c362e8f00fdeb2c3a96b66);
+            
+        
+
+        marker_fa17602ab54179cc679944a6a6e26766.bindPopup(popup_7774dbb805e4e888c58a1c54b8289ead)
+        ;
+
+        
+    
+    
+            marker_fa17602ab54179cc679944a6a6e26766.bindTooltip(
+                `<div>
+                     Yuen Long - AQHI
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_fa17602ab54179cc679944a6a6e26766.setIcon(icon_4224d789d43c5204a9f422823593763a);
+            
+    
+            feature_group_9e10a3d7a9ff648aa4f642e5e8ecf41f.addTo(map_e760fa99f3f640c93d26d4df7a06c247);
+        
+    
+            var layer_control_fe49a2662df71962c24484cb9ce1084e_layers = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_4fcc7b71bf9942b32828ff0b9bec181a,
+                },
+                overlays :  {
+                    "Districts - relative humidity" : feature_group_4772aa4610a8049d1d0b0fd76e32c407,
+                    "Stations - AQHI" : feature_group_9e10a3d7a9ff648aa4f642e5e8ecf41f,
+                },
+            };
+            let layer_control_fe49a2662df71962c24484cb9ce1084e = L.control.layers(
+                layer_control_fe49a2662df71962c24484cb9ce1084e_layers.base_layers,
+                layer_control_fe49a2662df71962c24484cb9ce1084e_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": false,
+  "autoZIndex": true,
+}
+            ).addTo(map_e760fa99f3f640c93d26d4df7a06c247);
+
+        
+    
+            map_e760fa99f3f640c93d26d4df7a06c247.fitBounds(
+                [[22.24725, 113.94355], [22.49695, 114.36072]],
+                {"padding": [35, 35]}
+            );
+        
+</script>
+</html>
